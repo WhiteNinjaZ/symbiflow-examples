@@ -1,9 +1,10 @@
 Serial Receiver/Transmitter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-This design demonstrates a UART transmitter/receiver on the basys3 board. ASKII values can be sent 
-over USB to a putty terminal and characters from the Putty terminal can be sent back to the 
-basys. To build the design first navigate to the additional_examples directory: 
+This design expands upon the UART transmitter design and adds a receiver to the mix. ASKII 
+values can be sent over USB to a putty terminal and characters from the Putty terminal can 
+be sent back to the basys. To build the design first navigate to the additional_examples 
+directory: 
 
 .. code-block:: bash
    :name: additional-example

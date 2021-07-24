@@ -8,15 +8,15 @@ output logic[4:0] debugLED
 );
 logic rx_error, rx_debug;
 
-logic busyByBy, tx_mid, send, btn[1:0];
-tx T0(.tx_out(tx_mid), .odd(1'b0), .busy(busyByBy), .din(sw), .clk(clk), .send(btn[1]),
+logic busy, tx_mid, send, btn[1:0];
+tx T0(.tx_out(tx_mid), .odd(1'b0), .busy(busy), .din(sw), .clk(clk), .send(btn[1]),
 .state(debugLED));
 assign tx_out = tx_mid;
 assign tx_debug = tx_mid;
 
-logic busyByByRx, dataGoner, btnRx[1:0];
+logic busyRx, dataThrow, btnRx[1:0];
 logic[7:0] rx_data;
-rx R0(.rx_in(rx_in), .odd(1'b0), .busy(busyByByRx), .data_strobe(dataGoner),
+rx R0(.rx_in(rx_in), .odd(1'b0), .busy(busyRx), .data_strobe(dataThrow),
 .dout(rx_data), .error(rx_error), .clk(clk));
 assign rx_debug = rx_in;
 
